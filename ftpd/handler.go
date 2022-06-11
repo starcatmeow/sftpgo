@@ -501,7 +501,7 @@ func (c *Connection) getListDirWithWildcards(dirName, pattern string) ([]os.File
 			return files, err
 		}
 		if match {
-			files[validIdx] = vfs.NewFileInfo(path.Join(relativeBase, fi.Name()), fi.IsDir(), fi.Size(),
+			files[validIdx] = vfs.NewFileInfo("../../"+path.Join(relativeBase, fi.Name()), fi.IsDir(), fi.Size(),
 				fi.ModTime(), true)
 			validIdx++
 		}
